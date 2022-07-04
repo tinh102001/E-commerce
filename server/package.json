@@ -1,20 +1,21 @@
 {
-  "name": "E-commerce",
+  "name": "server",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "type": "module",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "mongoose": "^6.4.2",
+    "nodemon": "^2.0.18"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tinh102001/E-commerce.git"
+  "devDependencies": {},
+  "scripts": {
+    "start": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/tinh102001/E-commerce/issues"
-  },
-  "homepage": "https://github.com/tinh102001/E-commerce#readme"
+  "license": "ISC"
 }

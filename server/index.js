@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 
 import user from "./routers/user.router.js";
+import category from "./routers/category.router.js";
 
 dotenv.config();
 
@@ -20,6 +21,7 @@ app.use(express.urlencoded({ extended: true, limit: "30mb" }));
 
 // API
 app.use("/user", user);
+app.use("/api", category);
 
 mongoose
   .connect(URI, { useNewUrlParser: true, useUnifiedTopology: true })

@@ -8,6 +8,7 @@ import fileUpload from "express-fileupload";
 import user from "./routers/user.router.js";
 import category from "./routers/category.router.js";
 import upload from "./routers/upload.router.js";
+import product from "./routers/product.router.js";
 
 dotenv.config();
 
@@ -26,6 +27,7 @@ app.use(fileUpload({ useTempFiles: true }));
 app.use("/user", user);
 app.use("/api", category);
 app.use("/api", upload);
+app.use("/api", product);
 
 mongoose
   .connect(URI, { useNewUrlParser: true, useUnifiedTopology: true })

@@ -9,6 +9,7 @@ import user from "./routers/user.router.js";
 import category from "./routers/category.router.js";
 import upload from "./routers/upload.router.js";
 import product from "./routers/product.router.js";
+import payment from "./routers/payment.router.js";
 
 dotenv.config();
 
@@ -28,6 +29,7 @@ app.use("/user", user);
 app.use("/api", category);
 app.use("/api", upload);
 app.use("/api", product);
+app.use("/api", payment);
 
 mongoose
   .connect(URI, { useNewUrlParser: true, useUnifiedTopology: true })

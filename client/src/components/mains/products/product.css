@@ -1,0 +1,15 @@
+
+
+.products {
+    display: flex;
+    min-height: calc(100vh - 11.25rem);
+    flex-wrap: wrap;
+    padding-left: 50px;
+    align-content: flex-start; 
+    row-gap: 10px;
+    column-gap: 1em;
+    padding-top: 0.3125rem;
+    margin: auto;
+    width: 1200px;
+}
+@import url("../utils/productItem/productItem.css");

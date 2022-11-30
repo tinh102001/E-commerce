@@ -1,0 +1,387 @@
+div,
+nav {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  background-color: transparent;
+}
+
+ul {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+
+li {
+  margin: 5px;
+}
+
+form {
+  display: block;
+  margin-top: 0em;
+}
+
+input {
+  line-height: normal;
+}
+
+/* Top header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateZ(0);
+  z-index: 100;
+  background: linear-gradient(-180deg, #f53d2d, #f63);
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.container-wrapper {
+  min-width: 1200px;
+}
+
+.navbar-wrapper {
+  height: 2.125rem;
+  z-index: 400;
+  background: transparent;
+  position: relative;
+}
+
+.navbar-wrapper .navbar {
+  color: #fff;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  width: 1200px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+
+.navbar-first {
+  display: flex;
+}
+
+.navbar-element {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  padding: 0.25rem;
+  position: relative;
+  overflow: visible;
+  outline: 0;
+}
+
+.navbar-element:not(:first-child) {
+  margin-left: 0.625rem;
+}
+
+.navbar-element:not(:first-child):after {
+  content: "";
+  height: 0.9375rem;
+  width: 0;
+  border-left: 1px solid hsla(0, 0%, 100%, 0.22);
+  border-right: 1px solid hsla(0, 0%, 100%, 0.22);
+  position: absolute;
+  left: -6px;
+  top: calc(50% - 7px);
+}
+
+.navbar-spacer {
+  flex: 1;
+}
+
+.navbar-second {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  height: 2.125rem;
+}
+
+/* Bottom header */
+
+/* Logo */
+.shopee-top--sticky .header-with-search-wrapper .container-wrapper {
+  min-width: inherit;
+}
+
+.container-wrapper {
+  min-width: 1200px;
+}
+
+.header-with-search-wrapper {
+  background: transparent;
+  box-shadow: 0 1px 1px 0 rgb(0 0 0 / 5%);
+  box-sizing: border-box;
+  z-index: 300;
+}
+
+.header-with-search .container {
+  width: inherit;
+  max-width: 1200px;
+  box-sizing: border-box;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  width: 1200px;
+}
+
+.header-with-search,
+.header-with-search__cart-wrapper,
+.header-with-search__logo-section {
+  box-sizing: border-box;
+}
+
+.header-with-search {
+  display: flex;
+  height: 5.3125rem;
+  justify-content: space-between;
+  padding: 1rem 0 0.625rem;
+}
+
+.header-with-search__logo-section {
+  position: relative;
+  top: -0.1875rem;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+
+.header-with-search__logo-wrapper {
+  padding: 2px;
+  margin: -2px;
+  border-radius: 2px;
+}
+
+.header-with-search-wrapper .header-with-search__shopee-logo {
+  width: 162px;
+  height: 50px;
+}
+
+.header-with-search__shopee-logo .icon-shopee-logo {
+  display: block;
+  width: 162px;
+  height: 50px;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+.icon-shopee-logo {
+  width: 11.875rem;
+  height: 4rem;
+  fill: #fff;
+}
+
+.shopee-svg-icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  /* fill: currentColor; */
+  position: relative;
+}
+
+:not(svg) {
+  transform-origin: 0px 0px;
+}
+
+/* Search Bar */
+
+.header-with-search__search-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 840px;
+  position: relative;
+}
+
+.header-with-search__search-section > .shopee-searchbar {
+  width: 100%;
+  box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 9%);
+}
+
+.shopee-searchbar {
+  --focus-indicator-spacing: 3px;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  height: 2.5rem;
+  box-sizing: border-box;
+  padding: 0.1875rem;
+  border-radius: 2px;
+  background: #fff;
+}
+
+.shopee-searchbar__main {
+  display: flex;
+  flex: 1;
+}
+
+.header-with-search-wrapper .shopee-searchbar-input {
+  background-color: #fff;
+  border-color: #fff;
+}
+
+.shopee-searchbar-input {
+  display: flex;
+  flex: 1;
+  box-sizing: border-box;
+  padding: 0 0.625rem;
+  position: relative;
+}
+
+.shopee-searchbar-input__input {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  outline: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+/* Button search */
+.header-with-search-wrapper .shopee-searchbar > .btn-solid-primary {
+  position: relative;
+  overflow: visible;
+  outline: 0;
+  background: #fb5533;
+}
+
+.btn-solid-primary {
+  color: rgb(255, 255, 255);
+  position: relative;
+  overflow: visible;
+  outline: 0px;
+  background: rgb(238, 77, 45);
+}
+
+.btn--s {
+  height: 34px;
+  padding: 0px 15px;
+  min-width: 60px;
+  max-width: 190px;
+}
+
+.btn--inline {
+  display: inline-flex;
+}
+
+.btn {
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  flex-direction: column;
+  font-size: 14px;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  box-shadow: 0 1px 1px 0 rgb(0 0 0 / 9%);
+  border-radius: 2px;
+  border: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
+  outline: 0;
+  cursor: pointer;
+}
+
+.btn-solid-primary {
+  color: #fff;
+  position: relative;
+  overflow: visible;
+  outline: 0;
+  background: #ee4d2d;
+}
+
+.shopee-searchbar > .btn svg {
+  margin: 0 auto;
+}
+
+/* Cart wrapper */
+.header-with-search__cart-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding-bottom: 5px;
+  margin: 0 10px;
+}
+
+.stardust-popover {
+  position: relative;
+}
+
+.cart-drawer-container {
+  padding: 10px 0;
+}
+
+.center,
+.v-center {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__link-icon.icon-shopping-cart-2 {
+  fill: currentColor;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+}
+
+.cart-drawer .icon-shopping-cart-2 {
+  color: #fff;
+  stroke: #fff;
+}
+
+/* dropdown content */
+.dropdown-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.navbar-second.dropdown {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  height: max-content;
+  border: 1px solid #ee4d2d;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.user-name {
+  cursor: pointer;
+}
+
+.navbar-second.dropdown li {
+  /* background-color: red; */
+  padding-bottom: 5px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-menu:hover .navbar-second.dropdown {
+  display: block;
+}
+.dropdown-content li:hover {
+  background-color: #f1f1f1;
+}

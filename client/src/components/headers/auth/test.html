@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .slider {
+        width: 800px;
+        height: 500px;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      .slides {
+        display: flex;
+        width: 500%;
+        height: 500px;
+      }
+
+      .slides input {
+        display: none;
+      }
+
+      .slide {
+        width: 20%;
+        transition: 2s;
+      }
+
+      .slide img {
+        width: 800px;
+        height: 500px;
+      }
+
+      .navigation-manual {
+        position: absolute;
+        width: 800px;
+        margin-top: -40px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .manual-btn {
+        border: 2px solid aqua;
+        padding: 5px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 1s;
+      }
+
+      .manual-btn:not(:last-child) {
+        margin-right: 40px;
+      }
+
+      .manual-btn:hover {
+        background: aqua;
+      }
+
+      #radio1:checked ~ .first {
+        margin-left: 0;
+      }
+
+      #radio2:checked ~ .first {
+        margin-left: -100%;
+      }
+
+      #radio3:checked ~ .first {
+        margin-left: -200%;
+      }
+
+      #radio4:checked ~ .first {
+        margin-left: -300%;
+      }
+
+      #radio5:checked ~ .first {
+        margin-left: -400%;
+      }
+
+      #radio6:checked ~ .first {
+        margin-left: -500%;
+      }
+
+      #radio7:checked ~ .first {
+        margin-left: -600%;
+      }
+
+      #radio8:checked ~ .first {
+        margin-left: -700%;
+      }
+
+      #radio9:checked ~ .first {
+        margin-left: -800%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slider">
+      <div class="slides">
+        <input type="radio" name="radio-btn" id="radio1" />
+        <input type="radio" name="radio-btn" id="radio2" />
+        <input type="radio" name="radio-btn" id="radio3" />
+        <input type="radio" name="radio-btn" id="radio4" />
+        <input type="radio" name="radio-btn" id="radio5" />
+        <input type="radio" name="radio-btn" id="radio6" />
+        <input type="radio" name="radio-btn" id="radio7" />
+        <input type="radio" name="radio-btn" id="radio8" />
+        <input type="radio" name="radio-btn" id="radio9" />
+
+        <div class="slide first">
+          <img
+            src="https://cf.shopee.vn/file/f6c506c151e0b0bc202110617698be6c_xxhdpi"
+            alt=""
+          />
+        </div>
+        <div class="slide">
+          <img
+            src="https://cf.shopee.vn/file/5b5de1582d99cbbe75a8f9a5c4dae1c2_xxhdpi"
+            alt=""
+          />
+        </div>
+        <div class="slide">
+          <img
+            src="https://cf.shopee.vn/file/1d453866aea0c6ece1f93c21653b9d6b_xxhdpi"
+            alt=""
+          />
+        </div>
+        <div class="slide">
+          <img
+            src="https://cf.shopee.vn/file/3b933ed02f4fc1bc44744333ae5dfb25_xxhdpi"
+            alt=""
+          />
+        </div>
+        <div class="slide">
+          <img
+            src="https://cf.shopee.vn/file/a3c362f0acc1599a0901a4a8b9c81953_xxhdpi"
+            alt=""
+          />
+        </div>
+        <div class="slide">
+          <img
+            src="https://cf.shopee.vn/file/c79d581302cb60a45108de18cdc8c480_xxhdpi"
+            alt=""
+          />
+        </div>
+        <div class="slide">
+          <img
+            src="https://cf.shopee.vn/file/7497f4916e9eb735ca7d5a66c0988026_xxhdpi"
+            alt=""
+          />
+        </div>
+        <div class="slide">
+          <img
+            src="https://cf.shopee.vn/file/0138407bdb9de1dfef0c50daea53b564_xxhdpi"
+            alt=""
+          />
+        </div>
+        <div class="slide">
+          <img
+            src="https://cf.shopee.vn/file/ed9685b4008d5c0db574f977e8635261_xxhdpi"
+            alt=""
+          />
+        </div>
+
+        <div class="navigation-auto">
+          <div class="auto-btn1"></div>
+          <div class="auto-btn2"></div>
+          <div class="auto-btn3"></div>
+          <div class="auto-btn4"></div>
+          <div class="auto-btn5"></div>
+          <div class="auto-btn6"></div>
+          <div class="auto-btn7"></div>
+          <div class="auto-btn8"></div>
+          <div class="auto-btn9"></div>
+          <div class="auto-btn10"></div>
+          <div class="auto-btn11"></div>
+          <div class="auto-btn12"></div>
+        </div>
+      </div>
+      <div class="navigation-manual">
+        <label for="radio1" class="manual-btn"></label>
+        <label for="radio2" class="manual-btn"></label>
+        <label for="radio3" class="manual-btn"></label>
+        <label for="radio4" class="manual-btn"></label>
+        <label for="radio5" class="manual-btn"></label>
+        <label for="radio6" class="manual-btn"></label>
+        <label for="radio7" class="manual-btn"></label>
+        <label for="radio8" class="manual-btn"></label>
+        <label for="radio9" class="manual-btn"></label>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+.type {
+    display: inline-block;
+    color: #222;
+    font-size: 1.5rem;
+    position: relative;
+    bottom: 10px;
+}
+
+.header-auth {
+    position: relative;
+    top: 10px;
+    left: 200px;
+}
+
+.logo {
+    cursor: pointer;
+}

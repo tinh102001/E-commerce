@@ -25,9 +25,13 @@ const productSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    images:{
+    image:{
         type: Object,
         required: true
+    },
+    imagesGallery:{
+        type: Array,
+        default: 0
     },
     category:{
         type: String,
@@ -38,6 +42,10 @@ const productSchema = new mongoose.Schema({
         default: false
     },
     sold:{
+        type: Number,
+        default: 0
+    },
+    stock: {
         type: Number,
         default: 0
     }

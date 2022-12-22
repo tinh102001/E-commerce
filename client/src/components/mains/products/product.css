@@ -1,15 +1,41 @@
-
-
 .products {
-    display: flex;
-    min-height: calc(100vh - 11.25rem);
-    flex-wrap: wrap;
-    padding-left: 50px;
-    align-content: flex-start; 
-    row-gap: 10px;
-    column-gap: 1em;
-    padding-top: 0.3125rem;
-    margin: auto;
-    width: 1200px;
+  display: flex;
+  min-height: calc(100vh - 11.25rem);
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 10px;
+  padding-top: 0.3125rem;
+  margin: auto;
+  width: 80%;
 }
+
+.delete-all {
+  width: fit-content;
+  margin-left: 10%;
+  margin-bottom: 5px;
+}
+
+.delete-all button {
+  background-color: #ee4d2d;
+  border: 1px solid transparent;
+  color: white;
+  opacity: 0.6;
+  transition: 0.3s;
+  border-radius: 5px;
+}
+
+.delete-all button:hover {
+  opacity: 1;
+}
+
+@media (max-width: 600px) {
+  .products {
+    padding: 0;
+    margin: 0;
+    column-gap: 0;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
 @import url("../utils/productItem/productItem.css");

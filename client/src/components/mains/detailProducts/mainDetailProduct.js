@@ -4,6 +4,7 @@ import { GlobalState } from "../../../GlobalState";
 
 import ButtonShopping from "./buttonShopping";
 import InputQuantity from "./inputQuantity";
+import SlideshowGallery from "./slideshowGallery";
 import "./mainDetailProduct.css";
 
 function MainDetailProduct() {
@@ -28,9 +29,9 @@ function MainDetailProduct() {
     <>
       <div className="detail">
         <div className="detail-main">
-          <div className="detail-img">
-            <img src={detailProduct.imagesGallery[0].url} alt="" />
-          </div>
+          <SlideshowGallery
+            props={detailProduct.imagesGallery}
+          ></SlideshowGallery>
           <div className="detail-selected">
             <span className="detail-title">{detailProduct.title}</span>
             <div className="detail-rate">
@@ -42,20 +43,25 @@ function MainDetailProduct() {
             <div className="detail-price">
               <div className="price">$ {detailProduct.price}</div>
             </div>
-            <InputQuantity props={quantity} stock={detailProduct.stock}></InputQuantity>
-            <div >{detailProduct.content}</div>
-            <ButtonShopping props={() => addCart(detailProduct, quantity[0])} ></ButtonShopping>
-            <div>Số lượng trong kho: {detailProduct.stock}</div>
+            <div>
+              <div className="stock-number">
+                Số lượng trong kho: {detailProduct.stock}
+              </div>
+              <InputQuantity
+                props={quantity}
+                stock={detailProduct.stock}
+              ></InputQuantity>
+            </div>
+
+            <div>{detailProduct.content}</div>
+            <ButtonShopping
+              props={() => addCart(detailProduct, quantity[0])}
+            ></ButtonShopping>
           </div>
         </div>
         <div className="detail-description">
           <div className="description">{detailProduct.description}</div>
         </div>
-        {/* <div>
-          {detailProduct.imagesGallery.map((item, index) => {
-            return <img key={index} src={item} alt="" />;
-          })}
-        </div> */}
       </div>
     </>
   );

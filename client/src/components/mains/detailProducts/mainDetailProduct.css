@@ -1,93 +1,113 @@
 .detail {
-    position: relative;
-    top: 120px;
+  position: relative;
+  top: 120px;
 }
 .detail-main {
-    display: flex;
-    background: #fff;
-    border-radius: 3px;
-    box-shadow: 0 1px 1px 0 rgb(0 0 0 / 5%);
-    padding: 0;
-    margin-top: 1.25rem;
-    margin-right: auto;
-    margin-left: auto;
-    width: 1200px;
+  display: flex;
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0 1px 1px 0 rgb(0 0 0 / 5%);
+  padding: 0;
+  margin: 1.25rem auto 0 auto;
+  padding-bottom: 2.1875rem;
+  width: calc(100vw - 12.5rem);
 }
 
 .detail-img {
-    /* width: 450px; */
-    padding: 15px;
-    /* flex-grow: 1; */
-    /* flex-shrink: 0; */
+  width: 50%;
+  padding: 15px;
 }
 
 .detail-img img {
-    width: 500px;
-    height: fit-content;
-    object-fit: cover;
-  } 
+  width: 500px;
+  height: fit-content;
+  object-fit: cover;
+}
 
 .detail-selected {
-    width: 100%;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    /* flex-grow: 2; */
-    padding: 1.25rem 2.1875rem 0 1.25rem;
-    /* flex: 1 1 auto;
-    flex-direction: column; */
+  width: 50%;
+  padding: 1.25rem 2.1875rem 0 1.25rem;
 }
 
 .detail-title {
-    font-weight: 500;
-    line-height: 1.5rem;
-    font-size: 1.25rem;
-    word-wrap: break-word;
+  font-weight: 500;
+  line-height: 1.5rem;
+  font-size: 1.25rem;
+  word-wrap: break-word;
 }
 
+.stock-number {
+  float: right;
+  margin: 5px 20px 0 0;
+}
 .detail-rate {
-    padding: 10px;
+  padding: 10px;
 }
 
-.detail-sold div{
-    display: inline;
-    margin-right: 5px;
-    font-size: 1rem;
-    color: rgb(34, 34, 34);
+.detail-sold div {
+  display: inline;
+  margin-right: 5px;
+  font-size: 1rem;
+  color: rgb(34, 34, 34);
 }
 
-.detail-sold p{
-    display: inline;
-    font-size: 0.875rem;
-    color: rgb(118, 118, 118);
-    text-transform: capitalize;
+.detail-sold p {
+  display: inline;
+  font-size: 0.875rem;
+  color: rgb(118, 118, 118);
+  text-transform: capitalize;
 }
 
 .detail-price {
-    display: block;
-    padding: 15px 20px;
-    background: rgb(250, 250, 250);
+  display: block;
+  padding: 15px 20px;
+  background: rgb(250, 250, 250);
 }
 
 .price {
-    font-size: 1.875rem;
-    font-weight: 500;
-    color: rgb(238, 77, 45);
+  font-size: 1.875rem;
+  font-weight: 500;
+  color: rgb(238, 77, 45);
 }
 
 .detail-description {
-    background: #fff;
-    border-radius: 3px;
-    box-shadow: 0 1px 1px 0 rgb(0 0 0 / 5%);
-    padding: 0;
-    margin-top: 1.25rem;
-    margin-right: auto;
-    margin-left: auto;
-    width: 1200px;
-    padding: 5px 0 5px 0;
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0 1px 1px 0 rgb(0 0 0 / 5%);
+  margin-top: 1.25rem;
+  margin-right: auto;
+  margin-left: auto;
+  width: calc(100vw - 12.5rem);
+  padding: 5px 0 5px 0;
 }
 
 .description {
-    margin: 20px;
-    
+  margin: 20px;
 }
 
+@media (max-width: 1000px) {
+  .detail-main {
+    flex-direction: column;
+    width: 100%;
+  }
+  .detail-selected {
+    width: 90%;
+    margin: auto;
+    font-size: 0.9rem;
+  }
+  .detail-img {
+    margin: auto;
+    width: 90%;
+  }
+  .detail-img img {
+    width: 220px;
+    height: fit-content;
+    object-fit: cover;
+  }
+  .detail-description {
+    width: 100%;
+  }
+  .description {
+    font-size: 0.9rem;
+  }
+}

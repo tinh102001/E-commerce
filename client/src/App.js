@@ -7,12 +7,12 @@ import LoginPage from "./pages/login";
 import RegisterPage from "./pages/register";
 import DetailProduct from "./pages/detailProduct";
 import CartPage from "./pages/cartPage";
+import CreateProductPage from "./pages/createProduct";
+import CreateCategory from "./pages/createCategory";
 import NotFound from "./pages/notFound";
+import OrderDetailsPage from "./pages/orderDetailsPage";
+import OrderHistoryPage from "./pages/orderHistoryPage";
 
-import Categories from "./components/mains/categories/categories";
-import CreateProduct from "./components/mains/createProducts/createProduct";
-import OrderHistory from "./components/mains/history/orderHistory";
-import OrderDetails from "./components/mains/history/orderDetails";
 
 function App() {
   const state = useContext(GlobalState);
@@ -42,24 +42,24 @@ function App() {
 
         <Route
           path="/category"
-          element={isAdmin ? <Categories></Categories> : <NotFound></NotFound>}
+          element={isAdmin ? <CreateCategory></CreateCategory> : <NotFound></NotFound>}
         />
         <Route
           path="/create_product"
-          element={isAdmin ? <CreateProduct></CreateProduct> : <NotFound></NotFound>}
+          element={isAdmin ? <CreateProductPage></CreateProductPage> : <NotFound></NotFound>}
         />
         <Route
           path="/edit_product/:id"
-          element={isAdmin ? <CreateProduct></CreateProduct> : <NotFound></NotFound>}
+          element={isAdmin ? <CreateProductPage></CreateProductPage> : <NotFound></NotFound>}
         />
 
         <Route
           path="/history"
-          element={isLogged ? <OrderHistory></OrderHistory> : <NotFound></NotFound>}
+          element={isLogged ? <OrderHistoryPage></OrderHistoryPage> : <NotFound></NotFound>}
         />
         <Route
           path="/history/:id"
-          element={isLogged ? <OrderDetails></OrderDetails> : <NotFound></NotFound>}
+          element={isLogged ? <OrderDetailsPage></OrderDetailsPage> : <NotFound></NotFound>}
         />
 
         <Route path="/cart" element={<CartPage></CartPage>} />

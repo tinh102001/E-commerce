@@ -3,6 +3,8 @@ import { GlobalState } from "../../../GlobalState";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
+import "./history.css";
+
 function OrderHistory() {
   const state = useContext(GlobalState);
   const [history, setHistory] = state.userAPI.history;
@@ -29,12 +31,10 @@ function OrderHistory() {
   }, [token, isAdmin, setHistory]);
 
   return (
-    <div className="history-page">
-      <h2>History</h2>
+    <div className="history-page" style={{ margin: "110px 0 0 10px" }}>
+      <h4>Bạn có {history.length} đơn hàng</h4>
 
-      <h4>You have {history.length} ordered</h4>
-
-      <table>
+      <table style={{ margin: "30px auto" }}>
         <thead>
           <tr>
             <th>Payment ID</th>

@@ -115,17 +115,27 @@ export const productCtrl = {
   },
   updateProduct: async (req, res) => {
     try {
-      const { title, price, description, content, images, category, stock } = req.body;
-      if (!images) return res.status(400).json({ msg: "No image upload" });
+      const {
+        title,
+        price,
+        description,
+        content,
+        image,
+        imagesGallery,
+        category,
+        stock,
+      } = req.body;
+      if (!image) return res.status(400).json({ msg: "No image upload" });
 
       await Products.findOneAndUpdate(
         { _id: req.params.id },
         {
-          title: title.toLowerCase(),
+          title,
           price,
           description,
           content,
-          images,
+          image,
+          imagesGallery,
           category,
           stock,
         }

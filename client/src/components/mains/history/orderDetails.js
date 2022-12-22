@@ -2,6 +2,8 @@ import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { GlobalState } from "../../../GlobalState";
 
+import "./history.css";
+
 function OrderDetails() {
   const state = useContext(GlobalState);
   const [history] = state.userAPI.history;
@@ -20,8 +22,8 @@ function OrderDetails() {
   if (orderDetails.length === 0) return null;
 
   return (
-    <div className="history-page">
-      <table>
+    <div className="history-page" style={{ margin: "110px auto" }}>
+      <table style={{ margin: "30px auto" }}>
         <thead>
           <tr>
             <th>Name</th>
@@ -32,9 +34,13 @@ function OrderDetails() {
         </thead>
         <tbody>
           <tr>
-            <td>{orderDetails.address.recipient_name}</td>
+            <td>{orderDetails.address.full_name}</td>
             <td>
-              {orderDetails.address.line1 + " - " + orderDetails.address.city}
+              {orderDetails.address.address_line_1 +
+                " - " +
+                orderDetails.address.admin_area_2 +
+                " - " +
+                orderDetails.address.admin_area_1}
             </td>
             <td>{orderDetails.address.postal_code}</td>
             <td>{orderDetails.address.country_code}</td>
@@ -42,10 +48,10 @@ function OrderDetails() {
         </tbody>
       </table>
 
-      <table style={{ margin: "30px 0px" }}>
+      <table style={{ margin: "30px auto" }}>
         <thead>
           <tr>
-            <th></th>
+            <th>Ảnh sản phẩm</th>
             <th>Products</th>
             <th>Quantity</th>
             <th>Price</th>
@@ -55,7 +61,7 @@ function OrderDetails() {
           {orderDetails.cart.map((item) => (
             <tr key={item._id}>
               <td>
-                <img src={item.images.url} alt="" />
+                <img src={item.image.url} alt="" />
               </td>
               <td>{item.title}</td>
               <td>{item.quantity}</td>

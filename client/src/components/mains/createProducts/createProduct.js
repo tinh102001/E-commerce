@@ -13,7 +13,7 @@ const initialState = {
   description:
     "How to and tutorial videos of cool CSS effect, Web Design ideas,JavaScript libraries, Node.",
   content:
-    "Welcome to our channel Dev AT. Here you can learn web designing, UI/UX designing, html css tutorials, css animations and css effects, javascript and jquery tutorials and related so on.",
+    "You can learn web designing, UI/UX designing, html css tutorials, css animations and css effects, javascript and jquery tutorials and related so on.",
   category: "",
   _id: "",
 };
@@ -43,7 +43,8 @@ function CreateProduct() {
       products.forEach((product) => {
         if (product._id === param.id) {
           setProduct(product);
-          setImages(product.image.url);
+          setImages(product.image);
+          setImageGallery(product.imagesGallery)
         }
       });
     } else {
@@ -152,7 +153,7 @@ function CreateProduct() {
       if (onEdit) {
         await axios.put(
           `/api/products/${product._id}`,
-          { ...product, image: images, imagesGallery : imageGallery },
+          { ...product, image: images, imagesGallery: imageGallery },
           {
             headers: { Authorization: token },
           }
@@ -160,14 +161,14 @@ function CreateProduct() {
       } else {
         await axios.post(
           "/api/products",
-          { ...product, image: images, imagesGallery : imageGallery},
+          { ...product, image: images, imagesGallery: imageGallery },
           {
             headers: { Authorization: token },
           }
         );
       }
       setCallback(!callback);
-      navigate.push("/");
+      navigate("/");
     } catch (err) {
       alert(err.response.data.msg);
     }
@@ -176,6 +177,7 @@ function CreateProduct() {
   const styleUpload = {
     display: images ? "block" : "none",
   };
+
   return (
     <div className="create_product">
       <div className="upload">
@@ -186,7 +188,11 @@ function CreateProduct() {
           </div>
         ) : (
           <div id="file_img" style={styleUpload}>
-            <img src={images ? images.url : ""} alt="" />
+            {onEdit ? (
+              <img src={images.url} alt="" />
+            ) : (
+              <img src={images ? images.url : ""} alt="" />
+            )}
             <span onClick={handleDestroy}>X</span>
           </div>
         )}
@@ -287,8 +293,7 @@ function CreateProduct() {
         <section className="image-gallery-container">
           <label className="image-gallery-btn">
             + Add Images Gallery
-            <br />
-            <span>up to 10 images</span>
+            <span> up to 10 images</span>
             <input
               type="file"
               name="images"
@@ -297,8 +302,8 @@ function CreateProduct() {
               accept="image/png , image/jpeg, image/webp"
               className="image-gallery-input"
             />
+
           </label>
-          <br />
 
           {imageGallery.length > 0 &&
             (imageGallery.length > 10 ?? (
@@ -315,11 +320,15 @@ function CreateProduct() {
               imageGallery.map((image, index) => {
                 return (
                   <div key={image.public_id} className="image">
-                    <img className="image-gallery" src={image.url} height="200" alt="upload" />
+                    <img
+                      className="image-gallery"
+                      src={image.url}
+                      height="200"
+                      alt="upload"
+                    />
                     <button onClick={() => deleteImageGallery(image)}>
                       delete image
                     </button>
-                    <p>{index + 1}</p>
                   </div>
                 );
               })}

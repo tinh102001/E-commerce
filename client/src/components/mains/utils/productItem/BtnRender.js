@@ -1,9 +1,7 @@
-import React, { useContext } from "react";
-import { GlobalState } from "../../../../GlobalState";
+import React from "react";
 
 function BtnRender({ product, deleteProduct }) {
-  const state = useContext(GlobalState);
-  const [isAdmin] = state.userAPI.isAdmin;
+
 
   return (
     <div className="row_btn">

@@ -1,16 +1,26 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-import BtnRender from "./BtnRender";
-
 function ProductItem({ product, isAdmin, deleteProduct, handleCheck }) {
   let navigate = useNavigate();
   const handleClick = () => {
     navigate(`/detail/${product._id}`);
   };
 
+  const editProduct = () => {
+    navigate(`/edit_product/${product._id}`);
+  };
+
   return (
-    <div className="product-card" >
+    <div className="product-card">
+      {isAdmin && (
+        <input
+          className="product-card-checkbox"
+          type="checkbox"
+          checked={product.checked}
+          onChange={() => handleCheck(product._id)}
+        ></input>
+      )}
       <div onClick={handleClick}>
         <img src={product.image.url} alt="" />
 
@@ -24,13 +34,19 @@ function ProductItem({ product, isAdmin, deleteProduct, handleCheck }) {
         </div>
       </div>
       {isAdmin && (
-        <div style={{ cursor: "default" }}>
-          <input
-            type="checkbox"
-            checked={product.checked}
-            onChange={() => handleCheck(product._id)}
-          />
-          <BtnRender product={product} deleteProduct={deleteProduct} />
+        <div className="product-item-btn">
+          <button
+            className="product-item-btn-edit"
+            onClick={() => editProduct(product._id)}
+          >
+            Edit
+          </button>
+          <button
+            className="product-item-btn-delete"
+            onClick={() => deleteProduct(product._id, product.image.public_id)}
+          >
+            Delete
+          </button>
         </div>
       )}
     </div>

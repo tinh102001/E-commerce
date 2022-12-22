@@ -29,9 +29,9 @@ export const paymentCtrl = {
         address,
       });
 
-    //   cart.filter((item) => {
-    //     return sold(item._id, item.quantity, item.sold);
-    //   });
+      cart.filter((item) => {
+        return sold(item._id, item.quantity, item.sold, item.stock);
+      });
 
       await newPayment.save();
       res.json({ msg: "Payment Succes!" });
@@ -41,11 +41,12 @@ export const paymentCtrl = {
   },
 };
 
-const sold = async (id, quantity, oldSold) => {
+const sold = async (id, quantity, oldSold, oldStock) => {
   await Products.findOneAndUpdate(
     { _id: id },
     {
       sold: quantity + oldSold,
+      stock : oldStock - quantity,
     }
   );
 };

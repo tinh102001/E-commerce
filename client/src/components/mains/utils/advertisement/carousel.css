@@ -1,140 +1,95 @@
-.carousel-container {
-  margin-top: 150px;
-  display: block;
-  overflow: hidden;
-  margin: auto;
-  margin-top: 150px;
-  width: 900px;
-  height: 100%;
-}
-
-.slides {
-  display: flex;
-  width: inherit;
-}
-
-.slides input {
+.mySlides {
   display: none;
 }
-
-.slide {
-  transition: 1s;
+.mySlides img {
+  width: 100%;
 }
 
-.navigation-manual {
-  position: absolute;
-  width: inherit;
-  margin-top: -40px;
-  display: flex;
-  justify-content: center;
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: 110px auto 10px auto;
 }
 
-.manual-btn {
-  border: 1px solid hsla(0,0%,53.7%,.4);
-  background-color: hsla(0,0%,100%,.4);
-  padding: 5px;
-  border-radius: 10px;
+/* Next & previous buttons */
+.prev,
+.next {
   cursor: pointer;
-  transition: 1s;
-}
-
-.manual-btn:not(:last-child) {
-  margin-right: 10px;
-}
-
-.manual-btn:hover {
-  background: #ee4d2d;
-}
-
-#radio1:checked ~ .first {
-  margin-left: 0;
-}
-
-#radio2:checked ~ .first {
-  margin-left: -100%;
-}
-
-#radio3:checked ~ .first {
-  margin-left: -200%;
-}
-
-#radio4:checked ~ .first {
-  margin-left: -300%;
-}
-
-#radio5:checked ~ .first {
-  margin-left: -400%;
-}
-
-#radio6:checked ~ .first {
-  margin-left: -500%;
-}
-
-#radio7:checked ~ .first {
-  margin-left: -600%;
-}
-
-#radio8:checked ~ .first {
-  margin-left: -700%;
-}
-
-#radio9:checked ~ .first {
-  margin-left: -800%;
-}
-
-/* css auto navigation */
-.navigation-auto {
   position: absolute;
-  width: inherit;
-  margin-top: 234px;
-  display: flex;
-  justify-content: center;
+  background-color: transparent;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  height: 60px;
+  border: none;
 }
 
-.navigation-auto div{
-  border: 1px solid transparent;
-  padding: 5px;
-  border-radius: 10px;
-  transition: 2s;
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
 }
 
-.navigation-auto div:not(:last-child){
-  margin-right: 10px;
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
-
-#radio1:checked ~ .navigation-auto .auto-btn1 {
-  background: #ee4d2d;
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: hsla(0,0%,100%,.4);
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
 }
 
-#radio2:checked ~ .navigation-auto .auto-btn2 {
-  background: #ee4d2d;
+.dot-container {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  text-align: center;
 }
 
-#radio3:checked ~ .navigation-auto .auto-btn3 {
-  background: #ee4d2d;
+.active,
+.dot:hover {
+  background-color: #ee4d2d;
 }
 
-#radio4:checked ~ .navigation-auto .auto-btn4 {
-  background: #ee4d2d;
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
 }
 
-#radio5:checked ~ .navigation-auto .auto-btn5 {
-  background: #ee4d2d;
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-#radio6:checked ~ .navigation-auto .auto-btn6 {
-  background: #ee4d2d;
-}
-
-#radio7:checked ~ .navigation-auto .auto-btn7 {
-  background: #ee4d2d;
-}
-
-#radio8:checked ~ .navigation-auto .auto-btn8 {
-  background: #ee4d2d;
-}
-
-#radio9:checked ~ .navigation-auto .auto-btn9 {
-  background: #ee4d2d;
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev,
+  .next {
+    font-size: 11px;
+  }
 }

@@ -1,6 +1,8 @@
 import React, {useContext} from 'react'
 import { GlobalState } from '../../../GlobalState'
 
+import "./Filter.css"
+
 function Filters() {
     const state = useContext(GlobalState)
     const [categories] = state.categoriesAPI.categories
@@ -16,8 +18,9 @@ function Filters() {
 
     return (
         <div className="filter_menu">
-            <div className="row">
-                <span>Filters: </span>
+            <label style={{color : "#ee4d2d"}}>Lọc danh sách :</label>
+            <div className="filter-category">
+                <span>Danh mục: </span>
                 <select name="category" value={category} onChange={handleCategory} >
                     <option value=''>All Products</option>
                     {
@@ -31,8 +34,8 @@ function Filters() {
             </div>
 
 
-            <div className="row sort">
-                <span>Sort By: </span>
+            <div className="filter-sort">
+                <span>Sắp xếp: </span>
                 <select value={sort} onChange={e => setSort(e.target.value)} >
                     <option value=''>Newest</option>
                     <option value='sort=oldest'>Oldest</option>

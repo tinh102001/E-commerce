@@ -68,17 +68,18 @@ function Categories() {
         <input
           type="text"
           name="category"
+          className="categories-input"
           value={category}
           required
           onChange={(e) => setCategory(e.target.value)}
         />
 
-        <button type="submit">{onEdit ? "Update" : "Create"}</button>
+        <button type="submit" className="categories-btn">{onEdit ? "Update" : "Create"}</button>
       </form>
 
       <div className="col">
         {categories.map((category) => (
-          <div className="row" key={category._id}>
+          <div className="categories-row" key={category._id}>
             <p>{category.name}</p>
             <div>
               <button onClick={() => editCategory(category._id, category.name)}>

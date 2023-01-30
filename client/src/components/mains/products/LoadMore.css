@@ -1,0 +1,19 @@
+.load_more {
+  margin: auto;
+  width: fit-content;
+  margin-bottom: 20px;
+}
+
+.load_more button {
+  height: 30px;
+  background-color: #ee4d2d;
+  border: 1px solid transparent;
+  color: white;
+  opacity: 0.6;
+  transition: 0.3s;
+  border-radius: 50px;
+}
+
+.load_more button:hover {
+  opacity: 1;
+}
